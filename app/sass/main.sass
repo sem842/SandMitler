@@ -59,6 +59,15 @@ section, header
 
 section
 	background-color: #fff
+	&.inverse
+		color: #fff
+		background-color: $dark
+	.h2
+		font-size: 30px
+		font-weight: 800
+		color: $accent
+		span
+			color: #fff
 
 .logo
 	img
@@ -121,7 +130,17 @@ section
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
-
+	&.button-white
+		background-color: #fff
+		color: #444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:active
+			&::after
+				background-color: rgba(#000, .4)
 .hamburger
 	position: absolute
 	right: 0
@@ -319,14 +338,81 @@ $colors: $blue, $red, $accent
 		background-position: center
 		opacity: .7
 		transition: opacity .5s ease
+	
 	&-content
-		display: flex
+		//display: flex
 		position: relative
 		padding: 60px 10%
+	
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+	 .h3
+	 		font-weight: 800
+	 		font-size: 28px
+	 		margin-top: 5px
+	 		margin-bottom: 20px
+	 		span
+	 			font-weight: normal
+	 			font-size: 18px
+	 			font-weight: 300
+	 			display: block
+	 
+	&-list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-bottom: 25px
+		li
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans, sans-serif
+				color: #4a4a4a
+			.fa
+				font-size: 14px
 
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		> div
+			width: 64px
+			height: 64px
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
 
 .owl-carousel
 	.owl-item
 		backface-visibility: inherit
+
+.s
+	&-king, &-review, &-partners
+		padding: 5% 0
+	&-king
+		p
+			margin: 30px 0
+
+.section-overlay
+	 &::before
+	 	content: ''
+	 	position: absolute
+	 	top: 0
+	 	left: 0
+	 	width: 100%
+	 	height: 100%
+	 	background-color: $over
+	 	opacity: .92
 
 @import "media" // Всегда в конце
